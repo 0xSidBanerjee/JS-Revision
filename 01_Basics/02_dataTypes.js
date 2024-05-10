@@ -56,3 +56,6 @@ let myObj = {
 const myFunction = function(){
     console.log("As it is written");
 }
+
+// Primitive: Call by Value, Stack memory
+// Non-Primitive: Call by Reference(Original value will be changed), Heap memory
