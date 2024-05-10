@@ -28,7 +28,7 @@ console.log("2"===2); //false for strict check
 /*
 - primitive and non primitive (call by value, call by reference)
 - primitive:7 (call by value)
-- string, number, bolean, null, undefined, symbol , BigInt
+- string, number, boolean, null, undefined, symbol , BigInt
 - non primitive:3 (call by reference)
 - arrays, object, function 
 
