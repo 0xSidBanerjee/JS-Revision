@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Template</title>
+    <title>DOM Manipulation Part 2</title>
     <style>
-        .bg-black{
+        .body{
             background-color: #212121;
-            color: #fff;
-
+            color: #f1f1f1
         }
     </style>
 </head>
-<body  class="bg-black">
-    <div>
-        <h1 class="heading">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident eos repellendus cumque incidunt vel 
-            possimus distinctio deserunt, exercitationem modi saepe dolorem! Perspiciatis hic ducimus autem eligendi 
-            sequi aperiam eum sapiente.
-        </h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-    </div>
-    <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-        <li>Four</li>
-        <li>Five</li>
-    </ul>
+<body class="body">
     
 </body>
+<script>
+    // Adding a new element through DOM manupulation
+    const div=document.createElement('div');
+    div.className="generated class";
+    div.id='myId';
+    div.appendChild(document.createTextNode("Atreides"));
+    div.style.backgroundColor="green";
+    div.style.padding="10px";
+
+    document.body.appendChild(div);
+</script>
 </html>
