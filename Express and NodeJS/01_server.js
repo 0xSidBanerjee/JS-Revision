@@ -1,12 +1,11 @@
-const { error, log } = require("console");
-const express = require("express");
+const express= require("express");
 const app=express();
+const PORT=3000;
 
 app.get('/', (req,res)=>{
-    res.send("Hello World")
+    res.send("Hello World");
 })
 
-app.listen(3000, (req,res) =>{
-    console.log("App listening on port 3000");
+app.listen(PORT, (req,res)=>{
+    console.log(`Listening on port ${PORT}`);
 })
-
