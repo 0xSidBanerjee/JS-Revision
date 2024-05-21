@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Part 2</title>
+    <style>
+        .bgc{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bgc">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(languageName){
+        const li= document.createElement('li');
+        li.appendChild(document.createTextNode(languageName));
+        document.body.querySelector('.language').appendChild(li);
+    }
+    addLanguage("TypeScript");
+
+    // Edit
+    const secondLang=document.querySelector("li:nth-child(2)");
+    const newLi=document.createElement("li");
+    newLi.appendChild(document.createTextNode('Mojo'))
+    secondLang.replaceWith(newLi);
+
+    
+</script>
+</html>
