@@ -31,6 +31,8 @@
     newLi.appendChild(document.createTextNode('Mojo'))
     secondLang.replaceWith(newLi);
 
-    
+    // Remove
+    const lastLang=document.querySelector("li:last-child");
+    lastLang.remove();
 </script>
 </html>
