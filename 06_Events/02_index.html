@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Project 1</title>
+</head>
+<body>
+    <h1>Monkey D Luffy</h1>
+    <button>Stop</button>
+</body>
+<script>
+    // Set a timeout for 2 sec to change the h1, if the button is clicked before that then the change will not happen
+    const changeMe= setTimeout(() => {
+        document.querySelector('h1').innerHTML="Dragon D Luffy"
+    }, 2000);
+
+    document.addEventListener('click', ()=>{
+        clearTimeout(changeMe);
+    })
+</script>
+</html>
