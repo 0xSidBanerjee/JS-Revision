@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML HTTP Request</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>In this, we're working on XML HTTP Request</h1>
+    <p>This was used before fetch operation existed, using AJAX Programming</p>
+    <div style="border: 1px solid #ccc; border-radius: 10px; width: 300px; padding: 16px; text-align: center; font-family: Arial, sans-serif;">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" style="border-radius: 50%; width: 150px; height: 150px;">
+        <div style="margin-top: 16px; font-size: 18px; color: #333;">
+            <strong>Followers:</strong> <span id="followers"></span>
+        </div>
+    </div>
+</body>
+<script>
+    const requestURL='https://api.github.com/users/0xSidBanerjee';
+    const XHR=new XMLHttpRequest();
+    XHR.open('GET', requestURL);
+    XHR.onreadystatechange= function (){
+        if(XHR.readyState==4){
+            console.log(this.responseText);
+            console.log(JSON.parse(this.responseText).followers);
+            document.querySelector('img').setAttribute('src', `${JSON.parse(this.responseText).avatar_url}`)
+            document.querySelector('#followers').innerHTML=`${JSON.parse(this.responseText).followers}`
+
+        }
+    }
+    XHR.send();
+</script>
+</html>
