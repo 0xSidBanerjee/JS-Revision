@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deny Copy</title>
+</head>
+<body>
+    <h1>You can start the exam now.</h1>
+    <h3></h3>
+    <p>This is a copy free line, you can't copy this.</p>
+</body>
+<script>
+    let warnings=0;
+    document.querySelector('p').addEventListener('copy', (event)=>{
+        if(!check()){
+            warnings+=1;
+            event.preventDefault();
+            alert(`Warning: Copy feature not allowed on this website. (Attempt ${warnings})`)
+        }
+    })
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+    document.addEventListener('visibilitychange', ()=>{
+        if(!check()){
+            warnings+=1;
+            if(document.hidden){
+                alert(`Warning: Please Stay on page (Attempt ${warnings})`);
+            }
+        }
+    })
+    function check(){
+        if (warnings>=3){
+            alert( `Sus activity detected for ${(warnings>3)?`more than`:''} ${warnings} times. You've been disqualified from the exam. Cry about it.`)
+            document.querySelector('h1').innerHTML="You have been disqualified from exam for malpratices"
+            document.querySelector('h3').appendChild(document.createTextNode("If you think this is a mistake please contact the admin."))
+            return 1;
+        }
+    }
+</script>
+</html>
