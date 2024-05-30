@@ -7,3 +7,11 @@
 
 // 4 pillars
 // Abstraction Encapsulation Inheritance Polymorphism
+
+// Parts of OOPS
+// Object literal
+
+// Constructor function
+// Prototypes
+// Classes
+// Instances (new, this)
