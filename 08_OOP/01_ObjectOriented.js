@@ -9,9 +9,22 @@
 // Abstraction Encapsulation Inheritance Polymorphism
 
 // Parts of OOPS
-// Object literal
+// Object literal {}
 
-// Constructor function
+// Constructor function => Gives us a new instance 
+function userDetails(username, loginCount, isLoggedIn){
+    this.username=username;
+    this.loginCount=loginCount;
+    this.isLoggedIn=isLoggedIn;
+
+    return this;
+}
+
+const user1=new userDetails("Sidoryx", 12, true);
+const user2=new userDetails("Sherlock", 221, false);
+console.log(user1);
+console.log(user2);
+
 // Prototypes
 // Classes
 // Instances (new, this)
